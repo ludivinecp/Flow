@@ -1,9 +1,14 @@
 <div class="jobs container" ng-controller="jobsController as jobCtrl">
+    <p>JOBS</p>
     <ul>
         <li ng-repeat="job in jobCtrl.jobs">
-            <p>{job.title}</p>
-            <p>{job.content}</p>
-            <p>{job.salary}</p>
+            <ul>
+                <li>{{job.title}}</li>
+                <li>{{job.company_name}}</li>
+                <li>{{job.job_type}}</li>
+                <li>{{job.remuneration_text}}</li>
+                <li>{{job.city}}</li>
+            </ul>
         </li>
     </ul>
 </div>

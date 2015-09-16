@@ -17,7 +17,7 @@ request.factory('requestPost', ['$http', function ($http) {
 request.factory('requestGet', ['$http', function ($http) {
     return function (url, dataSend, myCallback) {
         $http.get(url, dataSend)
-        .sucess(function (data) {
+        .success(function (data) {
             myCallback(data);
         })
         .error(function () {

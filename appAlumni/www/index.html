@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <meta http-equiv="Content-Security-Policy" content="default-src * data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; script-src *">
     <title>Alumni app</title>
 
     <link href="lib/ionic/css/ionic.css" rel="stylesheet">
@@ -21,7 +22,7 @@
         <h1 class="title">Ionic Blank Starter</h1>
       </ion-header-bar>
       <ion-content>
-        <div class="main-container" ng-view>
+        <div class="main-container [onload: loading]" ng-view>
           
         </div>
       </ion-content>

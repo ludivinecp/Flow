@@ -84,10 +84,68 @@ app.directive('log', [function () {
 
 //Jobs contain [controller:jobsController]
 app.controller('jobsController', ['requestGet', function (requestGet) {
+    var that = this;
     requestGet('http://192.168.1.89/alumni/get/jobs', null, function (data) {
         console.log(data);
-        this.jobs = data;
+        that.jobs = data;
     });
 }]);
+
+//Projects contain [controller:projectsController]
+app.controller('projectsController', ['requestGet', function (requestGet) {
+    requestGet('', {}, function(data) {
+        console.log(data);
+    });
+}]);
+
+//display project contain [controller:displayProjectController]
+app.controller(
+    'displayProjectController',
+    [
+        'requestGet',
+        function (requestGet) {
+            requestGet('', {}, function (data) {
+                console.log(data);
+            });
+        }
+    ]
+);
+
+//display job contain[controller:displayJobController, directive:sendTag]
+app.controller('displayJobController', ['requestGet', function (requestGet) {
+    var that = this;
+    requestGet(
+        'http://192.168.1.89/alumni/send/tag',
+        {
+            'tagName': $scope.tagName,
+            'jobId': $scope.job,
+            'userId': $scope.userId
+        },
+        function (data) {
+            console.log(data);
+            that.job = data;
+        }
+    );
+}]);
+
+app.directive('sendTag', [function () {
+    return {
+        restrict: 'A',
+        controller: function (requestGet) {
+            requestGet(
+                'http://192.168.1.89/alumni/send/tag',
+                {
+                    'tagName': $scope.tagName,
+                    'jobId': $scope.job,
+                    'userId': $scope.userId
+                },
+                function (data) {
+                    console.log(data);
+                }
+            );
+        },
+        controllerAs: 'sendTagCtrl'
+    };
+}])
 
 }());
