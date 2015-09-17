@@ -3,11 +3,10 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-    <meta http-equiv="Content-Security-Policy" content="default-src * data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; script-src *">
+    <meta http-equiv="Content-Security-Policy" content="default-src * data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
     <title>Alumni app</title>
 
-    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+    <link href="css/ionic.app.css" rel="stylesheet">
 
     <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
     <link href="css/ionic.app.css" rel="stylesheet">
@@ -17,11 +16,25 @@
   <body ng-app="app">
 
     <ion-pane>
-      <ion-header-bar class="bar-stable">
-        <div></div>
-        <h1 class="title">Ionic Blank Starter</h1>
+      <ion-header-bar class="bar-stable header">
+        <div toggle-display='.menu hide-left'>
+          <div class="burger" toggle-display=".menu"><span>burger</span></div>
+        </div>
+        <h1 class="header-title"><a href="#/home">Flow</a></h1>
       </ion-header-bar>
       <ion-content>
+        <div class="menu">
+          <nav>
+            <p class="title">Menu</p>
+            <ul>
+              <li><div class="home icon"><span>home</span></div><a href="#/home">Accueil</a></li>
+              <li><div class="profil icon"><span>profil</span></div><a href="#/profil">profil</a></li>
+              <li><div class="commu icon"><span>commu</span></div><a href="#/comm">communautée</a></li>
+              <li><div class="jobs icon"><span>jobs</span></div><a href="#/jobs">jobs</a></li>
+              <li><div class="projects icon"><span>projects</span></div><a href="#/projects">projets</a></li>
+            </ul>
+          </nav>
+        </div>
         <div class="main-container [onload: loading]" ng-view>
           
         </div>

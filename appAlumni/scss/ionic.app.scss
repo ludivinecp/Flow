@@ -21,3 +21,207 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 // Include all of Ionic
 @import "www/lib/ionic/scss/ionic";
 
+body {
+    .menu {
+        background-color: rgba(0, 0, 0, 0.8);
+        margin-left: -100%;
+        transition: margin-left 1s;
+        padding: 30px 30px;
+        z-index: 6;
+        width: 50%;
+        color: white;
+        font-size: 1.5em;
+        p {
+            margin-bottom: 30px;
+        }
+        li {
+            margin-bottom: 20px;
+            max-width: 90%;
+            max-height: 20px;
+        }
+        a {
+            color: white;
+            font-size: 0.5em;
+            display: inline-block;
+            text-transform: uppercase;
+        }
+    }
+    .hide-left {
+        margin-left: 0%;
+    }
+    .header {
+        text-align: center;
+    }
+    .burger {
+        background-image: url('../img/burger.jpg');
+        height: 35px;
+        width: 44px;
+        background-repeat: no-repeat;
+        background-size: 191%;
+        background-position: 50%;
+        span {
+            opacity: 0;
+        }
+    }
+    .title {
+        font-weight: bold;
+        font-size: 1.1em;
+    }
+    .upper {
+        text-transform: uppercase;
+    }
+    .align-center {
+        text-align: center;
+    }
+    .tags {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: stretch;
+        margin-top: 10px;
+        li {
+            padding: 5px 5px;
+            margin: 0 3px 3px 0;
+            &:first-child {
+                background-color: #FDD932;
+            }
+            &:nth-child(2) {
+                background-color: #F16528; 
+            }
+            &:nth-child(3) {
+                background-color: #29A7DE;
+            }
+        }
+        p {
+            color: white;
+        }
+        span {
+            color: white;
+            margin-left: 3px;
+        }
+    }
+    .neutral {
+        background-color: #C1C2C3 !important;
+        color: #2D2E32;
+    }
+    .header-title {
+        background-image: url('../img/logo.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        margin: 0 auto 0 auto;
+        background-size: 66%;
+        background-position: 0;
+        display: block;
+        a {
+            opacity: 0;
+        }
+    }
+    a {
+        text-decoration: none;
+    }
+    .home {
+        background-image: url('../img/home.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+    .profil {
+        background-image: url('../img/profil.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+    .commu {
+        background-image: url('../img/comm.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+    .jobs {
+        background-image: url('../img/jobs.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+    .projects {
+        background-image: url('../img/projects.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+    nav {
+        position: relative;
+        li {
+            div {
+                width: 15px;
+                height: 15px;
+                margin-right: 10px;
+                float: left;
+                span {
+                    opacity: 0;
+                    width: 15px;
+                    height: 15px;
+                    float: left;
+                }
+            }
+        }
+    }
+}
+
+
+
+.jobs {
+    .item {
+        position: relative;
+        li {
+            max-width: 101vw;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    }
+    .list-wrapper {
+        max-width: 65vw;
+    }
+    .logo {
+        position: absolute;
+        top: 15vh;
+        left: 74vw;
+        img {
+            width: 80px;
+            height: 65px;
+        }
+    }
+}
+
+.log {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    background-image: url('../img/login.jpg');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    a {
+        position: absolute;
+        left: 105px;
+        bottom: 58px;
+        width: 200px;
+        height: 200px;
+        opacity: 0;
+    }  
+}
+
+.home .container{
+    width: 100vw;
+    height: 100vh;
+}
+
+.profil .container{
+    width: 100vw;
+    height: 100vh;
+    background-image: url('../img/profil.jpg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.comm .container{
+    width: 100vw;
+    height: 100vh;
+    background-image: url('../img/comm-page.jpg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+}

@@ -1,14 +1,28 @@
 <div class="jobs container" ng-controller="jobsController as jobCtrl">
-    <p>JOBS</p>
-    <ul>
-        <li ng-repeat="job in jobCtrl.jobs">
-            <ul>
-                <li>{{job.title}}</li>
-                <li>{{job.company_name}}</li>
-                <li>{{job.job_type}}</li>
+    <ul class="list">
+        <li class="item" ng-repeat="job in jobCtrl.jobs">
+            <ul class="list-wrapper" ng-click="jobCtrl.redirect(job.id)">
+                <li class="title">{{job.title}}</li>
+                <li class="inline">{{job.job_type}}</li>
+                <li class="inline">{{job.company_name}}</li>
                 <li>{{job.remuneration_text}}</li>
-                <li>{{job.city}}</li>
+                <li class="upper">{{job.city}}</li>
+                <ul class="tags tech">
+                    <li ng-repeat="(tagName, tagValue) in job.techno_tags">
+                        <p class="upper">{{tagName}}<span>({{tagValue}})</span></p>
+                    </li>
+                </ul>
+                <ul class="tags user">
+                    <li ng-repeat="(tagName, tagValue) in job.user_tags">
+                        <p class="upper">{{tagName}}<span>({{tagValue}})</span></p>
+                    </li>
+                    <li class="neutral">+ {{jobCtrl.nbr / 2}}</li>
+                </ul>
             </ul>
+            <div class="logo">
+                <img src="{{job.logo_url}}" ng-show="job.logo_url" alt="logo">
+                <img src="./../img/laptop-computer.png" ng-hide="job.logo_url" alt="logo">    
+            </div>
         </li>
     </ul>
 </div>
